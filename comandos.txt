@@ -1,0 +1,11 @@
+lanza express en el puerto 3000 o proveido
+- node server/index.js
+
+configuramos en el package.json -> scripts
+"dev": "nodemon server/index.js"
+- npm run dev
+
+28. lanza mongoDB
+- mongod
+
+
