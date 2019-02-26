@@ -8,17 +8,18 @@ preguntaCtrl.getPreguntas = async (req, res, next) => {
 };
 
 preguntaCtrl.createPregunta = async (req, res, next) => {
-    console.log(req.body);
+    const pregunta = new PreguntaModel(req.body);
+    await pregunta.save();
     res.json('received');
-    
+
     // const pregunta = new PreguntaModel({
-    //     name: req.body.name,
-    //     position: req.body.position,
-    //     office: req.body.office,
-    //     salary: req.body.salary
+    //    name: req.body.name,
+    //    position: req.body.position,
+    //    office: req.body.office,
+    //    salary: req.body.salary
     // });
     // await pregunta.save();
-    // res.json({status: 'Pregunta created'});
+    // res.json({status: 'Question created'});
 };
 
 preguntaCtrl.getPregunta = async (req, res, next) => {
