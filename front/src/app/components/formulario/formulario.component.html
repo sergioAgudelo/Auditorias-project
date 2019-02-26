@@ -1,0 +1,13 @@
+<header>
+    <h2>Calidad en la base de datos</h2>
+</header>
+<div class="row" *ngFor="let pregunta of preguntas; index as i">
+  <div class="col">
+    <label for="exampleFormControlSelect1">{{i+1}} - {{pregunta.pregunta}}</label>
+    <select id="exampleFormControlSelect1">
+        <option value="S">Si</option>
+        <option value="N">No</option>
+        <option value="D">Ninguna de las anteriores.</option>
+    </select>
+  </div>
+</div>
