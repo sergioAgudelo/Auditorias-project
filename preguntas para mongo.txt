@@ -1,0 +1,142 @@
+db.preguntas.insert([
+{
+"pregunta": "¿Existe algún archivo de tipo Log donde guarde información referida a las operaciones que realiza la Base de datos?",
+"respuestas": []
+},
+{
+"pregunta": "¿Se realiza copias de seguridad (diariamente, semanalmente, mensualmente, ¿etc.)?",
+"respuestas": []
+},
+{
+"pregunta": "¿Existe algún usuario que no sea el DBA pero que tenga asignado el rol DBA del servidor?",
+"respuestas": []
+},
+{
+"numero": "4",
+"pregunta": "¿Se encuentra un administrador de sistemas en la empresa que lleve un control de los usuarios?",
+"respuesta": ""
+},
+{
+"numero": "5",
+"pregunta": "¿Son gestionados los perfiles de estos usuarios por el administrador?",
+"respuesta": ""
+},
+{
+"numero": "6",
+"pregunta": "¿Son gestionados los accesos a las instancias de la Base de datos?",
+"respuesta": ""
+},
+{
+"numero": "7",
+"pregunta": "¿Son gestionados los accesos a las instancias de la Base de datos?",
+"respuesta": ""
+},
+{
+"numero": "8",
+"pregunta": "¿Las instancias que contienen el repositorio, tienen acceso restringido?",
+"respuesta": ""
+},
+{
+"numero": "9",
+"pregunta": "¿Se renuevan las claves de los usuarios de la Base de Datos?",
+"respuesta": ""
+},
+{
+"numero": "10",
+"pregunta": "¿Se obliga el cambio de la contraseña de forma automática?",
+"respuesta": ""
+},
+{
+"numero": "11",
+"pregunta": "¿Se encuentran listados de todos aquellos intentos de accesos no satisfactorios o denegados a estructuras, tablas físicas y lógicas del repositorio?",
+"respuesta": ""
+},
+{
+"numero": "12",
+"pregunta": "¿Posee la base de datos un diseño físico y lógico?",
+"respuesta": ""
+},
+{
+"numero": "13",
+"pregunta": "¿Posee el diccionario de datos un diseño físico y lógico?",
+"respuesta": ""
+},
+{
+"numero": "14",
+"pregunta": "¿Existe una instancia con copia del Repositorio para el entorno de desarrollo?",
+"respuesta": ""
+},
+{
+"numero": "15",
+"pregunta": "¿Los datos utilizados en el entorno de desarrollo, son reales?",
+"respuesta": ""
+},
+{
+"numero": "16",
+"pregunta": "¿Las copias de seguridad son encriptados?",
+"respuesta": ""
+},
+{
+"numero": "17",
+"pregunta": "¿Se ha probado restaurar alguna vez una copia de seguridad, para probar que las misma se encuentran bien hechas?",
+"respuesta": ""
+},
+{
+"numero": "18",
+"pregunta": "¿Los dispositivos que tienen las copias de seguridad son almacenados fuera del edificio de la empresa?",
+"respuesta": ""
+},
+{
+"numero": "19",
+"pregunta": "¿En caso de que el equipo principal sufra una avería, existen auxiliares?",
+"respuesta": ""
+},
+{
+"numero": "20",
+"pregunta": "¿Cuándo se necesita reestablecer la base de datos, se le comunica al administrador?",
+"respuesta": ""
+},
+{
+"numero": "21",
+"pregunta":" ¿Se lleva a cabo una comprobación, para verificar que los cambios efectuados son los solicitados por el interesado?",
+"respuesta": ""
+},
+{
+"numero": "22",
+"pregunta":" ¿Se documentan los cambios efectuados?",
+"respuesta": ""
+},
+{
+"numero": "23",
+"pregunta":" ¿Hay algún procedimiento para dar de alta a un usuario?",
+"respuesta": ""
+},
+{
+"numero": "24",
+"pregunta":" ¿Hay algún procedimiento para dar de baja a un usuario?",
+"respuesta": ""
+},
+{
+"numero": "25",
+"pregunta":" ¿Es eliminada la cuenta del usuario en dicho procedimiento?",
+"respuesta": ""
+},
+{
+"numero": "26",
+"pregunta":" ¿El motor de Base de Datos soporta herramientas de auditoria?",
+"respuesta": ""
+},
+{
+"numero": "27",
+"pregunta":" ¿Existe algún plan de contingencia ante alguna situación no deseada en la Base de Datos?",
+"respuesta": ""
+},
+{
+"numero": "28",
+"pregunta":" ¿Existen logs que permitan tener pistas sobre las acciones realizadas sobre los objetos de la base de datos?",
+"respuesta": ""
+}])
+
+
+
+

@@ -8,18 +8,12 @@ preguntaCtrl.getPreguntas = async (req, res, next) => {
 };
 
 preguntaCtrl.createPregunta = async (req, res, next) => {
-    const pregunta = new PreguntaModel(req.body);
+    const pregunta = new PreguntaModel({
+       pregunta: req.body.pregunta,
+       respuestas: req.body.respuestas
+    });
     await pregunta.save();
-    res.json('received');
-
-    // const pregunta = new PreguntaModel({
-    //    name: req.body.name,
-    //    position: req.body.position,
-    //    office: req.body.office,
-    //    salary: req.body.salary
-    // });
-    // await pregunta.save();
-    // res.json({status: 'Question created'});
+    res.json({status: 'Question created'});
 };
 
 preguntaCtrl.getPregunta = async (req, res, next) => {
@@ -31,10 +25,8 @@ preguntaCtrl.getPregunta = async (req, res, next) => {
 preguntaCtrl.editPregunta = async (req, res, next) => {
     const { id } = req.params;
     const pregunta = {
-        name: req.body.name,
-        position: req.body.position,
-        office: req.body.office,
-        salary: req.body.salary
+        pregunta: req.body.pregunta,
+        respuestas: req.body.respuestas
     };
     await PreguntaModel.findByIdAndUpdate(id, {$set: pregunta}, {new: true});
     res.json({status: 'Pregunta Updated'});

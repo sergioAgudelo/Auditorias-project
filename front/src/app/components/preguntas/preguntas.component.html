@@ -1,0 +1,85 @@
+<!-- <div clas="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content"> -->
+
+          <!-- the #respuestaForm acts like a var but this capture all de form including every input, button, etc. -->
+
+          <!-- <form #respuestaForm="ngForm" (ngSubmit)="addRespuesta(respuestaForm)">
+            <div class="row">
+              <div class="input-field col s12">
+                <input type="text" name="question" #name="ngModel" [(ngModel)]="preguntaService.selectedPregunta.pregunta"
+                placeholder="Enter your question">
+              </div>
+              <div class="input-field col s12">
+                <input type="text" name="answer" #answer="ngModel" [(ngModel)]="preguntaService.selectedPregunta.answer"
+                placeholder="Enter your answer">
+              </div>
+
+              <div class="card-action">
+                <div class="input-field col s12">
+                  <button class="btn right" (click)="resetForm(respuestaForm)">Limpiar</button>
+                  <button class="btn right" style="margin-left: 2px">Responder</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+
+    </div>
+  </div>
+</div> -->
+<div class="container">
+    <div class="row">
+      <div class="col s5">
+        <div class="card">
+          <div class="card-content">
+            <form #preguntaForm="ngForm" (ngSubmit)="addRespuesta(preguntaForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="preguntaService.selectedPregunta._id">
+              <div class="row">
+                <div class="input-field col-s12">
+                  <input type="text" name="pregunta" #name="ngModel" [(ngModel)]="preguntaService.selectedPregunta.pregunta" placeholder="Enter your FullName">
+                </div>
+                <div class="input-field col-s12">
+                  <input type="text" name="respuesta" #name="ngModel" [(ngModel)]="preguntaService.selectedPregunta.respuesta" placeholder="Enter your Position">
+                </div>
+                <div class="card-action">
+                  <div class="input-field col-s12">
+                    <button class="btn right" style="margin-left: 2px;" (click)="resetForm(preguntaForm)">Clean</button>
+                    <button class="btn right">Save</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col s7">
+        <table class="striped highlight black-text">
+          <thead>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+            <th>Operations</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pregunta of preguntaService.preguntas">
+              <td>{{ pregunta.pregunta }}</td>
+              <td>{{ pregunta.respuesta }}</td>
+              <td>
+                <a (click)="editEmployee(employee)">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a (click)="deleteEmployee(employee._id, employeeForm)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

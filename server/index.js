@@ -6,6 +6,8 @@
 const express = require('express');
 // morgan ayuda a ver por consola lo que el usuario quiere
 const morgan = require('morgan');
+// connect te port of the front with the port of the back, because there are two different ports trying to connect
+const cors = require('cors');
 const app = express();
 
 const { mongoose } = require('./database');
@@ -17,6 +19,7 @@ app.set('port', process.env.PORT || 3000);
 // cuando pidamos o demos datos al servidor el servidor debe entenderlos, aqui se realiza la conversion
 // para que el servidor entienda estos datos
 app.use(morgan('dev'));
+app.use(cors({origin: 'http://localhost:4200'}));
 // preparar el servidor para interpretar json (las repsuestas de angular)
 app.use(express.json());
 
