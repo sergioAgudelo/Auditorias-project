@@ -11,7 +11,7 @@ const app = express();
 const { mongoose } = require('./database');
 
 //settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 3002);
 
 // Midlewares
 // cuando pidamos o demos datos al servidor el servidor debe entenderlos, aqui se realiza la conversion
