@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const preguntaSchema = new Schema({
-    numero: { type: String, required: true},
     pregunta: { type: String, required: true },
     respuestas: [
-        { type: String, required: true }
+        { type: String, required: false }
     ]
 });
 
