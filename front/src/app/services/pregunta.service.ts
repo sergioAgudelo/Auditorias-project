@@ -11,7 +11,7 @@ import { Pregunta } from '../models/pregunta';
 
 export class PreguntaService {
 
-  readonly URL_API = 'http://localhost:3000/api/preguntas';
+  readonly URL_API = 'http://localhost:3002/api/preguntas';
   preguntas: Array<Pregunta>;
   selectedPregunta: Pregunta;
 
@@ -24,6 +24,7 @@ export class PreguntaService {
   }
 
   postPregunta(Pregunta: Pregunta){
+    // console.log(Pregunta);
     return this.http.post(this.URL_API, Pregunta);
   }
 

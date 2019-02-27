@@ -35,21 +35,49 @@
 </div> -->
 <div class="container">
     <div class="row">
-      <div class="col s5">
+        <div class="col s5">
+            <table class="striped highlight black-text">
+              <thead>
+                <th>Pregunta</th>
+                <th>Respuesta</th>
+                <th>Operations</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pregunta of preguntaService.preguntas; index as i">
+                  <td>{{i+1}} - {{ pregunta.pregunta }}</td>
+                  <td>{{ pregunta.respuestas }}</td>
+                  <td>
+                    <a (click)="editPregunta(pregunta)">
+                      <i class="material-icons">edit</i>
+                    </a>
+                    <a (click)="deletePregunta(pregunta._id, preguntaForm)">
+                      <i class="material-icons">delete</i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      <div class="col s7">
         <div class="card">
           <div class="card-content">
             <form #preguntaForm="ngForm" (ngSubmit)="addRespuesta(preguntaForm)">
               <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="preguntaService.selectedPregunta._id">
               <div class="row">
-                <div class="input-field col-s12">
+                <!-- <div class="input-field col-s12">
                   <input type="text" name="pregunta" #name="ngModel" [(ngModel)]="preguntaService.selectedPregunta.pregunta" placeholder="Enter your FullName">
-                </div>
+                </div> -->
                 <div class="input-field col-s12">
-                  <input type="text" name="respuesta" #name="ngModel" [(ngModel)]="preguntaService.selectedPregunta.respuesta" placeholder="Enter your Position">
+                  <div class="row" *ngFor="let pregunta of preguntaService.preguntas; index as i">
+                    <div class="input-field col-s12">
+                      <td>{{i+1}} - {{ pregunta.pregunta }}</td>
+                      <input type="text" name="respuestas" #name="ngModel" [(ngModel)]="pregunta.respuestas" placeholder="Enter your answer">
+                    </div>
+                  </div>
                 </div>
                 <div class="card-action">
                   <div class="input-field col-s12">
-                    <button class="btn right" style="margin-left: 2px;" (click)="resetForm(preguntaForm)">Clean</button>
+                    <!-- <button class="btn right" style="margin-left: 2px;" (click)="resetForm(preguntaForm)">Clean</button> -->
                     <button class="btn right">Save</button>
                   </div>
                 </div>
@@ -57,29 +85,6 @@
             </form>
           </div>
         </div>
-      </div>
-      <div class="col s7">
-        <table class="striped highlight black-text">
-          <thead>
-            <th>Pregunta</th>
-            <th>Respuesta</th>
-            <th>Operations</th>
-          </thead>
-          <tbody>
-            <tr *ngFor="let pregunta of preguntaService.preguntas">
-              <td>{{ pregunta.pregunta }}</td>
-              <td>{{ pregunta.respuesta }}</td>
-              <td>
-                <a (click)="editEmployee(employee)">
-                  <i class="material-icons">edit</i>
-                </a>
-                <a (click)="deleteEmployee(employee._id, employeeForm)">
-                  <i class="material-icons">delete</i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </div>

@@ -55,8 +55,25 @@ export class PreguntasComponent implements OnInit {
     this.getPreguntas();
   }
 
+  // addRespuesta(form?: NgForm) {
+  //   if(form.value._id) {
+  //     this.preguntaService.putPregunta(form.value.respuestas)
+  //       .subscribe(res => {
+  //         this.resetForm(form);
+  //         this.getPreguntas();
+  //         M.toast({html: 'Updated Successfully'});
+  //       });
+  //   } else {
+  //     this.preguntaService.postPregunta(form.value.respuesta)
+  //     .subscribe(res => {
+  //       this.getPreguntas();
+  //       this.resetForm(form);
+  //       M.toast({html: 'Save successfully'});
+  //     });
+  //   }
+  // }
+
   addRespuesta(form?: NgForm) {
-    console.log(form.value);
     if(form.value._id) {
       this.preguntaService.putPregunta(form.value)
         .subscribe(res => {
@@ -72,7 +89,6 @@ export class PreguntasComponent implements OnInit {
         M.toast({html: 'Save successfully'});
       });
     }
-    
   }
 
   getPreguntas() {

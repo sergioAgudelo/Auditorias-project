@@ -8,6 +8,9 @@ preguntaCtrl.getPreguntas = async (req, res, next) => {
 };
 
 preguntaCtrl.createPregunta = async (req, res, next) => {
+    console.log(req.body);
+    console.log(req.body.pregunta);
+    // console.log(req.body.respestas);
     const pregunta = new PreguntaModel({
        pregunta: req.body.pregunta,
        respuestas: req.body.respuestas
