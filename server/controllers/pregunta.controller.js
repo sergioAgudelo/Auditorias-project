@@ -40,6 +40,17 @@ preguntaCtrl.editPregunta = async (req, res, next) => {
     res.json({status: 'Pregunta Updated'});
 };
 
+
+preguntaCtrl.asignarRespuesta = async (req, res, next) => {
+    const { id } = req.params;
+    const pregunta = {
+        respuestas: req.body.respuesta      
+    };
+    await PreguntaModel.findByIdAndUpdate(id, { $push: pregunta }, { new: true });
+    res.json({ status: 'Pregunta Updated' });
+};
+
+
 preguntaCtrl.deletePregunta = async (req, res, next) => {
     await PreguntaModel.findByIdAndRemove(req.params.id);
     res.json({status: 'Pregunta Deleted'});

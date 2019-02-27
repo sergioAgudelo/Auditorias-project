@@ -5,6 +5,7 @@ const preguntaCtrl = require('../controllers/pregunta.controller');
 
 router.get('/', preguntaCtrl.getPreguntas);
 router.post('/', preguntaCtrl.createPregunta);
+router.post('/:id', preguntaCtrl.asignarRespuesta);
 router.get('/:id', preguntaCtrl.getPregunta);
 router.put('/:id', preguntaCtrl.editPregunta);
 router.delete('/:id', preguntaCtrl.deletePregunta);
